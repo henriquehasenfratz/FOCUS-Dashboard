@@ -1,0 +1,200 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "dea031b0b516f2f30f09",
+  "position": {
+    "x": 405.42568542568546,
+    "y": 36.940836940836945,
+    "z": 0,
+    "height": 579.047619047619,
+    "width": 626.14718614718618,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "focus_sample_10000"
+                    }
+                  },
+                  "Property": "RegionName"
+                }
+              },
+              "queryRef": "focus_sample_10000.RegionName",
+              "nativeQueryRef": "RegionName",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "focus_sample_10000"
+                    }
+                  },
+                  "Property": "AvailabilityZone"
+                }
+              },
+              "queryRef": "focus_sample_10000.AvailabilityZone",
+              "nativeQueryRef": "AvailabilityZone",
+              "active": false
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "focus_sample_10000"
+                        }
+                      },
+                      "Property": "BilledCost"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(focus_sample_10000.BilledCost)",
+              "nativeQueryRef": "Sum of BilledCost"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "focus_sample_10000"
+                        }
+                      },
+                      "Property": "PricingQuantity"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(focus_sample_10000.PricingQuantity)",
+              "nativeQueryRef": "Sum of PricingQuantity"
+            }
+          ]
+        }
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "focus_sample_10000.RegionName"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "focus_sample_10000"
+                    }
+                  },
+                  "Property": "RegionName"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "focus_sample_10000.AvailabilityZone"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "focus_sample_10000"
+                    }
+                  },
+                  "Property": "AvailabilityZone"
+                }
+              }
+            ],
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e4fd07e11dbc28fd62ae",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "focus_sample_10000"
+              }
+            },
+            "Property": "AvailabilityZone"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3449185ecc4ba8dbbeaa",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "focus_sample_10000"
+                  }
+                },
+                "Property": "BilledCost"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2eda6e83fbf942380c04",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "focus_sample_10000"
+                  }
+                },
+                "Property": "PricingQuantity"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

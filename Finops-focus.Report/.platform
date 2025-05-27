@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Finops-focus"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "82d976d3-2483-4e2f-8e53-9de50e008bda"
+  }
+}

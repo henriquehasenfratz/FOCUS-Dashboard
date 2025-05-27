@@ -1,0 +1,386 @@
+table focus_sample_10000
+	lineageTag: 97460f22-2e0c-4414-9a35-f3fb5a0ac935
+
+	column AvailabilityZone
+		dataType: string
+		lineageTag: de0f5f11-6ea0-4009-8e2f-1509a12e4fff
+		summarizeBy: none
+		sourceColumn: AvailabilityZone
+
+		annotation SummarizationSetBy = Automatic
+
+	column BilledCost
+		dataType: double
+		lineageTag: b464cfaa-2391-4b12-b5a7-b061bb8d2312
+		summarizeBy: sum
+		sourceColumn: BilledCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BillingAccountId
+		dataType: string
+		lineageTag: 9cb168a6-1db6-4313-85aa-e7316a50a590
+		summarizeBy: none
+		sourceColumn: BillingAccountId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillingAccountName
+		dataType: string
+		lineageTag: 5c55f9cd-f9e0-49bd-a108-3352b2885266
+		summarizeBy: none
+		sourceColumn: BillingAccountName
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillingCurrency
+		dataType: string
+		lineageTag: bb439c2d-9026-452b-8211-863e3d7fa3ce
+		summarizeBy: none
+		sourceColumn: BillingCurrency
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillingPeriodEnd
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 83d4c2c9-b861-4539-b2c8-e94c8628e1f8
+		summarizeBy: none
+		sourceColumn: BillingPeriodEnd
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillingPeriodStart
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f2b76cd6-2659-4a99-a4bd-7dde9f8cdbe1
+		summarizeBy: none
+		sourceColumn: BillingPeriodStart
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChargeCategory
+		dataType: string
+		lineageTag: af21b2c3-fa1e-49f9-9fb4-48b407d62587
+		summarizeBy: none
+		sourceColumn: ChargeCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChargeClass
+		dataType: string
+		lineageTag: 44ccbbf5-dcaf-4925-a7a9-7e3e0589ddd5
+		summarizeBy: none
+		sourceColumn: ChargeClass
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChargeDescription
+		dataType: string
+		lineageTag: f4de56ef-0cbe-485c-96f1-1edad19874fb
+		summarizeBy: none
+		sourceColumn: ChargeDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChargeFrequency
+		dataType: string
+		lineageTag: 72b0c665-4814-4a20-8468-20c23bbb6d1b
+		summarizeBy: none
+		sourceColumn: ChargeFrequency
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChargePeriodEnd
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: de72c445-106a-4ccc-a35e-48041d425228
+		summarizeBy: none
+		sourceColumn: ChargePeriodEnd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ChargePeriodStart
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1492cdea-a1fb-4b89-a3a6-c476c80169f8
+		summarizeBy: none
+		sourceColumn: ChargePeriodStart
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CommitmentDiscountCategory
+		dataType: string
+		lineageTag: 25566a21-9f1b-48fb-9560-7bb80decb910
+		summarizeBy: none
+		sourceColumn: CommitmentDiscountCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommitmentDiscountId
+		dataType: string
+		lineageTag: ffb921b2-06ba-4bf2-aaae-80f76c04a3a9
+		summarizeBy: none
+		sourceColumn: CommitmentDiscountId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommitmentDiscountName
+		dataType: string
+		lineageTag: f2374a5e-ed69-4cea-a39a-3ab9da0cab6c
+		summarizeBy: none
+		sourceColumn: CommitmentDiscountName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommitmentDiscountStatus
+		dataType: string
+		lineageTag: 5c0a1c03-aaa9-4805-b640-bfef05a3b3d4
+		summarizeBy: none
+		sourceColumn: CommitmentDiscountStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommitmentDiscountType
+		dataType: string
+		lineageTag: 6ffe456f-af5b-4e6c-8446-188d8f905c91
+		summarizeBy: none
+		sourceColumn: CommitmentDiscountType
+
+		annotation SummarizationSetBy = Automatic
+
+	column ConsumedQuantity
+		dataType: double
+		lineageTag: 25e3ee00-365d-4702-9bf7-2e5da73405e4
+		summarizeBy: sum
+		sourceColumn: ConsumedQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ConsumedUnit
+		dataType: string
+		lineageTag: 036912b2-797b-4d74-b518-41917ef04b75
+		summarizeBy: none
+		sourceColumn: ConsumedUnit
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContractedCost
+		dataType: int64
+		formatString: 0
+		lineageTag: 4fb13fea-7eea-441b-a84f-e667b8394b06
+		summarizeBy: sum
+		sourceColumn: ContractedCost
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContractedUnitPrice
+		dataType: int64
+		formatString: 0
+		lineageTag: 40467f73-1cde-49bc-a1c0-a5783e33a2cc
+		summarizeBy: sum
+		sourceColumn: ContractedUnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+	column EffectiveCost
+		dataType: int64
+		formatString: 0
+		lineageTag: 09df5ce4-7271-4e0e-8af6-d419e48927e5
+		summarizeBy: sum
+		sourceColumn: EffectiveCost
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceIssuerName
+		dataType: string
+		lineageTag: d1d47082-729a-41e2-a491-0f5be5ce8725
+		summarizeBy: none
+		sourceColumn: InvoiceIssuerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ListCost
+		dataType: double
+		lineageTag: 95b7d309-ee26-4828-b4a0-d8452834246b
+		summarizeBy: sum
+		sourceColumn: ListCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ListUnitPrice
+		dataType: double
+		lineageTag: 3adc815e-038b-46a0-8db1-a7768ab1689d
+		summarizeBy: sum
+		sourceColumn: ListUnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PricingCategory
+		dataType: string
+		lineageTag: dd85b2cd-aa5d-4961-b2a6-63e0a18bedcf
+		summarizeBy: none
+		sourceColumn: PricingCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column PricingQuantity
+		dataType: double
+		lineageTag: 0f348449-5edd-4ee2-9028-883d9a0e1e60
+		summarizeBy: sum
+		sourceColumn: PricingQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PricingUnit
+		dataType: string
+		lineageTag: 36f5bd72-dfa2-4ba8-bb94-006ac620105d
+		summarizeBy: none
+		sourceColumn: PricingUnit
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProviderName
+		dataType: string
+		lineageTag: 8007e6f0-41db-4020-b57e-613c7c217673
+		summarizeBy: none
+		sourceColumn: ProviderName
+
+		annotation SummarizationSetBy = Automatic
+
+	column PublisherName
+		dataType: string
+		lineageTag: bf5f17e7-c877-4ec6-a067-6fb48fa05f6b
+		summarizeBy: none
+		sourceColumn: PublisherName
+
+		annotation SummarizationSetBy = Automatic
+
+	column RegionId
+		dataType: string
+		lineageTag: 73aff392-cb15-45c1-86f1-8095306dc0fe
+		summarizeBy: none
+		sourceColumn: RegionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column RegionName
+		dataType: string
+		lineageTag: 39235214-b349-4788-9ca3-3114ec9d4676
+		summarizeBy: none
+		sourceColumn: RegionName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ResourceId
+		dataType: string
+		lineageTag: 8e5747ad-50fa-49e4-9984-e3611c29e720
+		summarizeBy: none
+		sourceColumn: ResourceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ResourceType
+		dataType: string
+		lineageTag: a888e146-3797-4f72-b77b-346f0beb122b
+		summarizeBy: none
+		sourceColumn: ResourceType
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServiceCategory
+		dataType: string
+		lineageTag: 6c987d65-94f3-4a34-84c9-091317dbd048
+		summarizeBy: none
+		sourceColumn: ServiceCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Id
+		dataType: string
+		lineageTag: 0b8c0df5-0d8d-4459-ac80-f6097037f95e
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServiceName
+		dataType: string
+		lineageTag: f40d2bad-6f48-4867-9fe6-9d032235b65a
+		summarizeBy: none
+		sourceColumn: ServiceName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SkuId
+		dataType: string
+		lineageTag: 472945ec-203b-4e03-b521-cdd0fd03aaee
+		summarizeBy: none
+		sourceColumn: SkuId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SkuPriceId
+		dataType: string
+		lineageTag: b61a94ac-fe64-4e0e-b326-5ecfa98a6514
+		summarizeBy: none
+		sourceColumn: SkuPriceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubAccountId
+		dataType: string
+		lineageTag: a3d93318-3398-4cff-bacb-4e80c7bb0fe2
+		summarizeBy: none
+		sourceColumn: SubAccountId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubAccountName
+		dataType: string
+		lineageTag: 89b8ce67-e994-4385-be4b-42c20d5ab315
+		summarizeBy: none
+		sourceColumn: SubAccountName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tags
+		dataType: string
+		lineageTag: 5c22e4ab-1aac-4c86-a722-7b0d23335cca
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	partition focus_sample_10000 = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\jhase\Documents\PROJETOS\FINOPS\focus_sample_10000.csv"),[Delimiter=",", Columns=44, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"AvailabilityZone", type text}, {"BilledCost", type number}, {"BillingAccountId", type text}, {"BillingAccountName", type text}, {"BillingCurrency", type text}, {"BillingPeriodEnd", type datetime}, {"BillingPeriodStart", type datetime}, {"ChargeCategory", type text}, {"ChargeClass", type text}, {"ChargeDescription", type text}, {"ChargeFrequency", type text}, {"ChargePeriodEnd", type date}, {"ChargePeriodStart", type date}, {"CommitmentDiscountCategory", type text}, {"CommitmentDiscountId", type text}, {"CommitmentDiscountName", type text}, {"CommitmentDiscountStatus", type text}, {"CommitmentDiscountType", type text}, {"ConsumedQuantity", type number}, {"ConsumedUnit", type text}, {"ContractedCost", Int64.Type}, {"ContractedUnitPrice", Int64.Type}, {"EffectiveCost", Int64.Type}, {"InvoiceIssuerName", type text}, {"ListCost", type number}, {"ListUnitPrice", type number}, {"PricingCategory", type text}, {"PricingQuantity", type number}, {"PricingUnit", type text}, {"ProviderName", type text}, {"PublisherName", type text}, {"RegionId", type text}, {"RegionName", type text}, {"ResourceId", type text}, {"ResourceName", type text}, {"ResourceType", type text}, {"ServiceCategory", type text}, {"Id", Int64.Type}, {"ServiceName", type text}, {"SkuId", type text}, {"SkuPriceId", type text}, {"SubAccountId", Int64.Type}, {"SubAccountName", type text}, {"Tags", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"ResourceName"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Id", type text}, {"SubAccountId", type text}}),
+				    #"Replaced Errors" = Table.ReplaceErrorValues(#"Changed Type1", {{"SubAccountId", null}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Replaced Errors", each true)
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
