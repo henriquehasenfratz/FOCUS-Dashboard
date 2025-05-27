@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "dea031b0b516f2f30f09",
   "position": {
-    "x": 405.42568542568546,
-    "y": 36.940836940836945,
+    "x": 46.955245781364631,
+    "y": 228.20249449743213,
     "z": 0,
-    "height": 579.047619047619,
-    "width": 626.14718614718618,
+    "height": 457.34409391049155,
+    "width": 456.40498899486425,
     "tabOrder": 0
   },
   "visual": {
@@ -23,27 +23,12 @@
                       "Entity": "focus_sample_10000"
                     }
                   },
-                  "Property": "RegionName"
+                  "Property": "RegionId"
                 }
               },
-              "queryRef": "focus_sample_10000.RegionName",
-              "nativeQueryRef": "RegionName",
+              "queryRef": "focus_sample_10000.RegionId",
+              "nativeQueryRef": "RegionId",
               "active": true
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "focus_sample_10000"
-                    }
-                  },
-                  "Property": "AvailabilityZone"
-                }
-              },
-              "queryRef": "focus_sample_10000.AvailabilityZone",
-              "nativeQueryRef": "AvailabilityZone",
-              "active": false
             }
           ]
         },
@@ -99,40 +84,9 @@
         "levels": [
           {
             "queryRefs": [
-              "focus_sample_10000.RegionName"
+              "focus_sample_10000.RegionId"
             ],
             "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "focus_sample_10000"
-                    }
-                  },
-                  "Property": "RegionName"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "focus_sample_10000.AvailabilityZone"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "focus_sample_10000"
-                    }
-                  },
-                  "Property": "AvailabilityZone"
-                }
-              }
-            ],
             "isPinned": true
           }
         ],
@@ -143,20 +97,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "e4fd07e11dbc28fd62ae",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "focus_sample_10000"
-              }
-            },
-            "Property": "AvailabilityZone"
-          }
-        },
-        "type": "Categorical"
-      },
       {
         "name": "3449185ecc4ba8dbbeaa",
         "field": {

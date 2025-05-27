@@ -1,0 +1,149 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "8746371fc53972fc71b5",
+  "position": {
+    "x": 701.725888324873,
+    "y": 194.92385786802029,
+    "z": 3,
+    "height": 525.21150592216577,
+    "width": 578.27411167512685,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "focus_sample_10000"
+                    }
+                  },
+                  "Property": "ServiceCategory"
+                }
+              },
+              "queryRef": "focus_sample_10000.ServiceCategory",
+              "nativeQueryRef": "ServiceCategory",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "focus_sample_10000"
+                    }
+                  },
+                  "Property": "ServiceName"
+                }
+              },
+              "queryRef": "focus_sample_10000.ServiceName",
+              "nativeQueryRef": "ServiceName",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "focus_sample_10000"
+                        }
+                      },
+                      "Property": "BilledCost"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(focus_sample_10000.BilledCost)",
+              "nativeQueryRef": "Sum of BilledCost"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "focus_sample_10000"
+                        }
+                      },
+                      "Property": "PricingQuantity"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(focus_sample_10000.PricingQuantity)",
+              "nativeQueryRef": "Sum of PricingQuantity"
+            }
+          ]
+        }
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "focus_sample_10000.ServiceCategory"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "focus_sample_10000"
+                    }
+                  },
+                  "Property": "ServiceCategory"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "focus_sample_10000.ServiceName"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "282.38444607483495D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "focus_sample_10000.ServiceCategory"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

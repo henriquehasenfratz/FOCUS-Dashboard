@@ -45,21 +45,25 @@ table focus_sample_10000
 
 	column BillingPeriodEnd
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		lineageTag: 83d4c2c9-b861-4539-b2c8-e94c8628e1f8
 		summarizeBy: none
 		sourceColumn: BillingPeriodEnd
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column BillingPeriodStart
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		lineageTag: f2b76cd6-2659-4a99-a4bd-7dde9f8cdbe1
 		summarizeBy: none
 		sourceColumn: BillingPeriodStart
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column ChargeCategory
 		dataType: string
@@ -95,7 +99,7 @@ table focus_sample_10000
 
 	column ChargePeriodEnd
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: de72c445-106a-4ccc-a35e-48041d425228
 		summarizeBy: none
 		sourceColumn: ChargePeriodEnd
@@ -106,7 +110,7 @@ table focus_sample_10000
 
 	column ChargePeriodStart
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: 1492cdea-a1fb-4b89-a3a6-c476c80169f8
 		summarizeBy: none
 		sourceColumn: ChargePeriodStart
@@ -311,9 +315,10 @@ table focus_sample_10000
 		annotation SummarizationSetBy = Automatic
 
 	column Id
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 0b8c0df5-0d8d-4459-ac80-f6097037f95e
-		summarizeBy: none
+		summarizeBy: count
 		sourceColumn: Id
 
 		annotation SummarizationSetBy = Automatic
@@ -358,9 +363,17 @@ table focus_sample_10000
 
 		annotation SummarizationSetBy = Automatic
 
+	column ResourceName
+		dataType: string
+		lineageTag: 7cb70f6b-0b97-4067-a9e4-5447a7cf29b6
+		summarizeBy: none
+		sourceColumn: ResourceName
+
+		annotation SummarizationSetBy = Automatic
+
 	column Tags
 		dataType: string
-		lineageTag: 5c22e4ab-1aac-4c86-a722-7b0d23335cca
+		lineageTag: 43b3a21d-d8f8-4b73-a9c3-edb0a2541adb
 		summarizeBy: none
 		sourceColumn: Tags
 
@@ -370,15 +383,19 @@ table focus_sample_10000
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\jhase\Documents\PROJETOS\FINOPS\focus_sample_10000.csv"),[Delimiter=",", Columns=44, Encoding=65001, QuoteStyle=QuoteStyle.None]),
-				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"AvailabilityZone", type text}, {"BilledCost", type number}, {"BillingAccountId", type text}, {"BillingAccountName", type text}, {"BillingCurrency", type text}, {"BillingPeriodEnd", type datetime}, {"BillingPeriodStart", type datetime}, {"ChargeCategory", type text}, {"ChargeClass", type text}, {"ChargeDescription", type text}, {"ChargeFrequency", type text}, {"ChargePeriodEnd", type date}, {"ChargePeriodStart", type date}, {"CommitmentDiscountCategory", type text}, {"CommitmentDiscountId", type text}, {"CommitmentDiscountName", type text}, {"CommitmentDiscountStatus", type text}, {"CommitmentDiscountType", type text}, {"ConsumedQuantity", type number}, {"ConsumedUnit", type text}, {"ContractedCost", Int64.Type}, {"ContractedUnitPrice", Int64.Type}, {"EffectiveCost", Int64.Type}, {"InvoiceIssuerName", type text}, {"ListCost", type number}, {"ListUnitPrice", type number}, {"PricingCategory", type text}, {"PricingQuantity", type number}, {"PricingUnit", type text}, {"ProviderName", type text}, {"PublisherName", type text}, {"RegionId", type text}, {"RegionName", type text}, {"ResourceId", type text}, {"ResourceName", type text}, {"ResourceType", type text}, {"ServiceCategory", type text}, {"Id", Int64.Type}, {"ServiceName", type text}, {"SkuId", type text}, {"SkuPriceId", type text}, {"SubAccountId", Int64.Type}, {"SubAccountName", type text}, {"Tags", type text}}),
-				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"ResourceName"}),
-				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Id", type text}, {"SubAccountId", type text}}),
-				    #"Replaced Errors" = Table.ReplaceErrorValues(#"Changed Type1", {{"SubAccountId", null}}),
-				    #"Filtered Rows" = Table.SelectRows(#"Replaced Errors", each true)
+				    Source = Excel.Workbook(File.Contents("C:\Users\jhase\Documents\PROJETOS\FINOPS\focus_sample_10000.xlsx"), null, true),
+				    focus_sample_100000_Sheet = Source{[Item="focus_sample_100000",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(focus_sample_100000_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"AvailabilityZone", type text}, {"BilledCost", type number}, {"BillingAccountId", type text}, {"BillingAccountName", type text}, {"BillingCurrency", type text}, {"BillingPeriodEnd", type date}, {"BillingPeriodStart", type date}, {"ChargeCategory", type text}, {"ChargeClass", type text}, {"ChargeDescription", type text}, {"ChargeFrequency", type text}, {"ChargePeriodEnd", type date}, {"ChargePeriodStart", type date}, {"CommitmentDiscountCategory", type text}, {"CommitmentDiscountId", type text}, {"CommitmentDiscountName", type text}, {"CommitmentDiscountStatus", type text}, {"CommitmentDiscountType", type text}, {"ConsumedQuantity", type number}, {"ConsumedUnit", type text}, {"ContractedCost", Int64.Type}, {"ContractedUnitPrice", Int64.Type}, {"EffectiveCost", Int64.Type}, {"InvoiceIssuerName", type text}, {"ListCost", type number}, {"ListUnitPrice", type number}, {"PricingCategory", type text}, {"PricingQuantity", type number}, {"PricingUnit", type text}, {"ProviderName", type text}, {"PublisherName", type text}, {"RegionId", type text}, {"RegionName", type text}, {"ResourceId", type text}, {"ResourceName", type text}, {"ResourceType", type text}, {"ServiceCategory", type text}, {"Id", Int64.Type}, {"ServiceName", type text}, {"SkuId", type text}, {"SkuPriceId", type text}, {"SubAccountId", Int64.Type}, {"SubAccountName", type text}, {"Tags", type text}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Changed Type",{{"SubAccountId", type text}}),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Changed Type1", "Tags", Splitter.SplitTextByDelimiter(":", QuoteStyle.Csv), {"Tags.1", "Tags.2", "Tags.3", "Tags.4"}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"Tags.1", type text}, {"Tags.2", type text}, {"Tags.3", type text}, {"Tags.4", type text}}),
+				    #"Extracted Text Before Delimiter" = Table.TransformColumns(#"Changed Type2", {{"Tags.4", each Text.BeforeDelimiter(_, "}"), type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Extracted Text Before Delimiter",{"Tags.1", "Tags.2", "Tags.3"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Tags.4", "Tags"}}),
+				    #"Replaced Errors" = Table.ReplaceErrorValues(#"Renamed Columns", {{"SubAccountId", "NULL"}})
 				in
-				    #"Filtered Rows"
+				    #"Replaced Errors"
 
 	annotation PBI_ResultType = Table
 
