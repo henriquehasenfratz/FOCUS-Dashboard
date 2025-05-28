@@ -1,5 +1,5 @@
 Esse projeto se trata do FOCUS da FinOps Foundation
 
-Criaremos um Dashboard com o modelo de dados do FOCUS
+Vou criar um Dashboard com o modelo de dados do FOCUS.
 
 
